@@ -1,23 +1,26 @@
-"""A script to determine pascal's triangle for any number"""
-
-
 def pascal_triangle(n):
     """
-    returns a list of lists of integers representing the Pascal’s triangle of n
+    this function returns a list
     """
-    triangle = []
 
-    # return (trianlgle if n <= 0)
+    answer = []
+    answer1 = [[1]]
+    answer2 = [[1], [1, 1]]
+    final = answer2.copy()
+
     if n <= 0:
-        return triangle
-    for i in range(n):
-        temp_list = []
+        return answer
 
-        for j in range(i+1):
-            if j == 0 or j == i:
-                temp_list.append(1)
-            else:
-                temp_list.append(triangle[i-1][j-1] + triangle[i-1][j])
-        triangle.append(temp_list)
-    # print(triangle)
-    return triangle
+    elif n == 1:
+        return answer1
+
+    elif n == 2:
+        return answer2
+    
+    elif n > 2:
+        for i in range(2, n):
+            mid = final[-1]
+            for j in mid:
+                if j == 1 and j == mid[0]:
+
+            
